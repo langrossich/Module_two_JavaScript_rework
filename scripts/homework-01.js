@@ -12,3 +12,13 @@ console.log(`Цель заработать ${purpose} рублей`);
 let budgetDay = money / 30;
 
 console.log(budgetDay);
+
+/*
+homework-01_hard
+*/
+
+console.log('>>>>>>>> homework-01_hard <<<<<<<<<<');
+
+let expendes_lc = expendes.toLowerCase()
+let arr_expendes = expendes_lc.split(', ');
+console.log(arr_expendes);

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AUTHORIZATION</title>
+    <title>REGISTRATION</title>
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,30 +14,52 @@
     <header>
         <div class="container">
             
-            <div class="header__form">
-                <a class="header__form-link" href="./registration.html">Зарегистрироваться</a>
-                <h1 class="header__form-title">Вход</h1>
-                <form action="" class="form" id="autorization">
-                    <div class="header__form-container">
-                        <div class="form-container__item">
-                            <label class="form-container__lable" for="userEmail">Email</label>
-                            <input class="form-container__input input-required"  id="userEmail" type="email" placeholder="Введите email">
-                            <span class="error-email"></span>
+            <div class="header__form-reg"
+            id="registration">
+                <button class="form__link-reg">Войти</button>
+                <h1 class="form__title">Регистрация</h1>
+                <form action="" class="form-reg">
+                    <div class="form__container">
+                        <div class="form__wrapper">
+                            <label class="form__lable" for="userEmail-reg">Email</label>
+                            <input class="form__input input-required" id="userEmail-reg" type="text" placeholder="Введите email" oninput="validateEmailReg(event)">
+                            <span class="error__email-reg"></span>
                         </div>
-                        <div class="form-container__item">
-                            <label class="form-container__lable" for="userPassword">Пароль</label>
-                            <input class="form-container__input input-required" id="userPassword" type="password" placeholder="Введите пароль">
-                            <span class="error-password"></span>
+                        <div class="form__wrapper">
+                            <label class="form__lable" for="userPassword-reg">Пароль</label>
+                            <input class="form__input input-required" id="userPassword-reg" type="password" placeholder="Введите пароль" oninput="validatePasswordReg(event)">
+                            <span class="error__password-reg"></span>
                         </div>
-                        <div class="form-container__item form-container__item-checkbox">
-                            <input class="form-container__checkbox" type="checkbox" id="userCheck">
-                            <label class="form-container__lable-checkbox input-required" for="userCheck" ><span>Я согласен с&nbsp;<a href="#"> Правилами пользования приложением</a></span></label>
-                            <span class="error-checkbox"></span>
+                        <div class="form__wrapper wrapper__checkbox-reg">
+                            <input class="form__checkbox-reg input-required" id="userCheck-reg" type="checkbox" oninput="validateCheckboxReg">
+                            <label class="lable__checkbox-reg" for="userCheck-reg"><span>Я согласен с&nbsp;<a href="#"> Правилами пользования приложением</a></span></label>
+                            <span class="error__checkbox-reg"></span>
                         </div>
-                        <button class="form-container__btn" id="userBtn" type="submit">Вход</button>
+                        <button class="form__btn" id="signUpBtn" type="submit">Вход</button>
                     </div>
                 </form>
             </div>
+
+            <div class="header__form-auth" id="authorization">
+                <button class="form__link-auth">Регистрация</button>
+                <h1 class="form__title">Войти</h1>
+                <form action="" class="form-auth" >
+                    <div class="form__container">
+                        <div class="form__wrapper">
+                            <label class="form__lable" for="userEmail-auth">Email</label>
+                            <input class="form__input input-required" id="userEmail-auth" type="text" placeholder="Введите email">
+                            <span class="error__email-auth"></span>
+                        </div>
+                        <div class="form__wrapper">
+                            <label class="form__lable" for="userPassword-auth">Пароль</label>
+                            <input class="form__input input-required" id="userPassword-auth" type="password" placeholder="Введите пароль">
+                            <span class="error__password-auth"></span>
+                        </div>
+                        <button class="form__btn form__btn-auth" id="signInBtn" type="submit">Вход</button>
+                    </div>
+                </form>
+            </div>
+
         </div>
     </header>
 </body>

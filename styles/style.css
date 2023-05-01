@@ -1,0 +1,239 @@
+* {
+    box-sizing : border-box;
+    margin     : 0;
+    padding    : 0;
+    font-family: 'Lora', serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #1A226B;
+}
+
+.container {
+    margin         : 0 auto;
+    width          : 1440px;
+    height         : 737px;
+    display        : flex;
+    justify-content: center;
+}
+
+.header__form {
+    display         : flex;
+    flex-direction  : column;
+    align-items     : center;
+    width           : 600px;
+    height          : 422px;
+    background-color: #FFFFFF;
+    margin-top      : 82px;
+    box-shadow      : 0px 0px 40px 10px rgba(0, 0, 0, 0.25);
+    border-radius   : 20px;
+}
+
+.header__form-link {
+    align-self     : flex-end;
+    margin-top     : 11px;
+    margin-right   : 11px;
+    text-decoration: none;
+    font-family    : 'Roboto';
+    font-style     : normal;
+    font-weight    : 700;
+    font-size      : 14px;
+    line-height    : 16px;
+    color          : #1A226B;
+}
+
+.header__form-title {
+    content    : Вход;
+    margin-top : 26px;
+    color      : #787878;
+    font-family: 'Roboto';
+    font-style : normal;
+    font-weight: 700;
+    font-size  : 50px;
+    line-height: 50px;
+}
+
+.header__form-container {
+    display       : flex;
+    flex-direction: column;
+}
+
+.form-container__item {
+    display       : flex;
+    flex-direction: column;
+    position      : relative;
+}
+
+.form-container__item::after {
+    content    : "*";
+    display    : block;
+    position   : absolute;
+    right      : 101%;
+    top        : 55%;
+    font-family: 'Roboto';
+    font-style : normal;
+    font-weight: 700;
+    font-size  : 18px;
+    line-height: 18px;
+    color      : #787878;
+}
+
+.form-container__lable {
+    margin-top   : 19px;
+    margin-bottom: 3px;
+    margin-left  : 7px;
+    font-family  : 'Roboto';
+    font-style   : normal;
+    font-weight  : 700;
+    font-size    : 16px;
+    line-height  : 16px;
+    color        : #787878;
+}
+
+.form-container__input {
+    width        : 509px;
+    height       : 49px;
+    background   : #FFFFFF;
+    border       : 2px solid #787878;
+    border-radius: 10px;
+    position     : relative;
+    font-family  : 'Roboto';
+    font-style   : normal;
+    font-weight  : 700;
+    font-size    : 28px;
+    line-height  : 36px;
+    padding-left : 15px;
+    color        : #787878;
+}
+
+.form-container__input::placeholder {
+    color       : #CCCCCC;
+    padding-left: 0px;
+}
+
+.form-container__input:focus {
+    padding         : 11px 0px 11px 0px;
+    color           : #787878;
+    border          : 2px solid #787878;
+    outline         : none;
+    padding-left    : 15px;
+    background-color: transparent;
+
+}
+
+.form-container__checkbox {
+    position: absolute;
+    z-index : -1;
+    opacity : 0;
+}
+
+.form-container__checkbox+.form-container__lable-checkbox {
+    display    : inline-flex;
+    align-self : flex-start;
+    color      : #787878;
+    align-items: center;
+    padding-top: 25px;
+}
+
+.form-container__checkbox:checked+.form-container__lable-checkbox::before {
+    cursor             : pointer;
+    content            : "";
+    background-image   : url(../assets/checked.svg);
+    background-repeat  : no-repeat;
+    background-position: center;
+    background-size    : contain;
+}
+
+.form-container__checkbox+.form-container__lable-checkbox::before {
+    cursor       : pointer;
+    content      : "";
+    border       : 2px solid #787878;
+    border-radius: 7px;
+    display      : inline-block;
+    font-weight  : 400;
+    font-size    : 14px;
+    line-height  : 16px;
+    color        : #787878;
+    width        : 25px;
+    height       : 25px;
+}
+
+.form-container__lable-checkbox>span {
+    display    : inline-flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.form-container__lable-checkbox>span>a {
+    color  : #787878;
+    display: inline-block;
+}
+
+.form-container__btn {
+    width        : 180px;
+    height       : 52px;
+    background   : #1A226B;
+    border-radius: 10px;
+    font-weight  : 700;
+    font-size    : 24px;
+    line-height  : 16px;
+    color        : #FFFFFF;
+    text-align   : center;
+    align-self   : center;
+    margin-top   : 17px;
+    cursor       : pointer;
+}
+
+.error-password,
+.error-checkbox,
+.error-email {
+    font-weight: 500;
+    font-size  : 10px;
+    line-height: 16px;
+    color      : #CB2424;
+    position   : absolute;
+    top        : 97%;
+
+}
+
+.form-container__input-error {
+    border-color: #CB2424;
+    color       : #CB2424;
+    position    : relative;
+
+}
+
+.form-container__input-error::after {
+    content    : 'Поле обязательно для заполнения';
+    font-weight: 500;
+    font-size  : 10px;
+    line-height: 16px;
+    color      : #CB2424;
+    position   : absolute;
+    top        : 97%;
+}
+
+.form-container__input-error+.form-container__item::after {
+    color: #CB2424;
+}
+
+
+
+/* .form-container__item-error .form-container__lable {
+    color: #CB2424;
+}
+
+.form-container__item-error .error-warning {
+    display: block;
+}
+
+.form-container__item-error .form-container__lable-checkbox:before {
+    border-color: #CB2424;
+}
+
+.error_text {
+    display     : none;
+    color       : #CB2424;
+    padding-left: 30px;
+} */
